@@ -2,4 +2,4 @@
 
 This was made following [angular's "Tour of Heroes" tutorial](https://angular.io/tutorial)
 
-You can access this application live [here](https://vercel.com/c-leri/angular-tour-of-heroes)
+You can access this application live [here](https://celeri-angular-tour-of-heroes.vercel.app)
