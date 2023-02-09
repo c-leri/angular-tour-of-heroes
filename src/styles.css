@@ -2,3 +2,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h2 {
+    @apply text-center my-6 text-4xl text-blue-600 font-bold;
+  }
+
+  h3 {
+    @apply text-center mt-6 mb-3 text-3xl text-blue-600 font-bold;
+  }
+}
+
+@layer components {
+  .input-bar {
+    @apply bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5;
+  }
+  .button {
+    @apply bg-blue-500 hover:bg-blue-700 rounded-2xl text-white font-bold px-3 py-2;
+  }
+}
+
+@layer utilities {
+  .navlink-base {
+    @apply px-3 py-2 rounded-md font-medium;
+  }
+  .navlink-current {
+    @apply navlink-base bg-gray-900 text-white;
+  }
+  .navlink {
+    @apply navlink-base text-gray-300 hover:bg-gray-700 hover:text-white;
+  }
+}

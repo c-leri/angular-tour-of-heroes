@@ -1,3 +1,5 @@
+<h3>Search a hero</h3>
+
 <div id="search-component" class="sm:mx-2">
   <label for="search-box" class="sr-only">Hero Search</label>
   <!-- Search bar from https://tailwindcomponents.com/component/tailwind-search-bar -->
@@ -9,15 +11,13 @@
       </svg>
     </div>
     <!-- Search input -->
-    <input #searchBox type="text" id="search-box" (input)="search(searchBox.value)" placeholder="Hero Search" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5" />
+    <input #searchBox type="text" id="search-box" (input)="search(searchBox.value)" placeholder="Hero Search" class="input-bar pl-10" />
   </div>
 
   <!-- Result list -->
-  <ul [ngClass]="{'border': (heroes$ | async) !== null && (heroes$ | async)?.length !== 0}" class="divide-y divide-gray-200 px-2 border-t-transparent border-gray-300 rounded-b">
-    <li *ngFor="let hero of heroes$ | async" class="px-2 py-2 hover:text-blue-500">
-      <a routerLink="/detail/{{hero.id}}">
+  <ul [ngClass]="{'hidden': (heroes$ | async) === null || (heroes$ | async)?.length === 0}" class="divide-y divide-gray-200 border border-t-transparent border-gray-300 rounded-b">
+    <li *ngFor="let hero of heroes$ | async" routerLink="/detail/{{hero.id}}" class="px-4 py-2 hover:text-blue-500 hover:font-bold hover:bg-gray-50 hover:cursor-pointer">
         {{hero.name}}
-      </a>
     </li>
   </ul>
 </div>

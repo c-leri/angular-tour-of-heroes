@@ -1,7 +1,7 @@
-<h2 class="text-center my-6 text-4xl text-blue-600 font-bold">Top Heroes</h2>
+<h2>Top Heroes</h2>
 
-<div>
-  <button *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}" class="bg-blue-500 hover:bg-blue-700 text-white text-lg font-bold py-3 px-6 rounded w-full mb-3 mx-auto block sm:w-auto sm:mx-2 sm:inline-block">
+<div class="flex flex-col sm:flex-row">
+  <button *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}" class="button text-lg py-3 px-6 rounded w-full mb-3 mx-auto sm:w-auto sm:mx-2">
     {{hero.name}}
   </button>
 </div>

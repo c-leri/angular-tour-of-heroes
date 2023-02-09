@@ -1,20 +1,22 @@
 <h2>My Heroes</h2>
+
 <ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </a>
-    <button type="button" class="delete" title="delete hero" (click)="delete(hero)">
+  <li *ngFor="let hero of heroes" class="flex flex-row mb-2 border rounded">
+    <div class="rounded-l bg-blue-500 text-white py-1 w-8 text-center pointer-events-none">{{hero.id}}</div>
+    <a routerLink="/detail/{{hero.id}}" class="grow pl-2 py-1 hover:bg-gray-500 hover:text-white">{{hero.name}}</a>
+    <button type="button" title="delete hero" (click)="delete(hero)" class="w-5 text-red-500 text-center font-mono font-bold border-l rounded-r hover:bg-red-500 hover:text-white">
       x
     </button>
   </li>
 </ul>
 
-<div>
-  <label for="new-hero">Hero name: </label>
-  <input id="new-hero" #heroName />
+<h3 class="text-center mt-6 mb-3 text-3xl text-blue-600 font-bold">Add a hero</h3>
 
-  <button type="button" class="add-button" (click)="add(heroName.value);heroName.value=''">
-    Add hero
+<form class="flex flex-row" (ngSubmit)="add(heroName.value);heroName.value=''">
+  <label for="new-hero" class="sr-only">Hero name</label>
+  <input #heroName type="text" id="new-hero" placeholder="Hero name..." class="input-bar" />
+
+  <button type="submit" class="rounded-full ml-2 my-auto h-8 w-10 bg-blue-500 hover:bg-blue-700 text-white text-xl font-mono font-bold">
+    +
   </button>
-</div>
+</form>
