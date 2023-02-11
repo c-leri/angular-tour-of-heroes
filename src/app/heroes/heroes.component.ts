@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faXmark, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import { Hero } from "../hero";
 import { HeroService } from "../hero.service";
@@ -8,6 +9,8 @@ import { HeroService } from "../hero.service";
   templateUrl: './heroes.component.html',
 })
 export class HeroesComponent implements OnInit {
+  faXmark = faXmark;
+  faPlus = faPlus;
   heroes: Hero[] = [];
 
   constructor(private heroService: HeroService) {}

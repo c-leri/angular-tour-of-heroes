@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { Location } from "@angular/common";
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 import { Hero } from "../hero";
 import { HeroService } from "../hero.service";
@@ -10,6 +11,7 @@ import { HeroService } from "../hero.service";
   templateUrl: './hero-detail.component.html',
 })
 export class HeroDetailComponent implements OnInit {
+  faArrowLeft = faArrowLeft;
   hero: Hero | undefined;
 
   constructor(

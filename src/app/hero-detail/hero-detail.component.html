@@ -2,16 +2,20 @@
   <h2>{{hero.name | uppercase}}</h2>
 
   <div class="mb-2">
-    <span class="font-bold">ID: </span>{{hero.id}}
+    <span class="font-bold mr-3">ID: </span>{{hero.id}}
   </div>
 
-  <div class="flex flex-row justify-between mb-5">
-    <label for="hero-name" class="font-bold py-1">Name: </label>
-    <input type="text" id="hero-name" [(ngModel)]="hero.name" placeholder="name" class="mx-3 px-2 py-1 border-b">
+  <div class="flex flex-row justify-between mb-8">
+    <label for="hero-name" class="font-bold mr-3 py-1">Name: </label>
+    <input type="text" id="hero-name" [(ngModel)]="hero.name" class="px-2 py-1 border-b-2 focus:outline-none focus:border-b-blue-500">
   </div>
 
-  <div class="flex flex-row justify-between">
-    <button type="button" (click)="goBack()" class="button-base rounded py-2 px-3">&larr; Go back</button>
-    <button type="button" (click)="save()" class="button-base rounded py-2 px-3">Save</button>
+  <div class="flex flex-row justify-between px-2">
+    <button type="button" (click)="goBack()" class="button-base rounded py-2 px-3">
+      <fa-icon [icon]="faArrowLeft" class="mr-2"></fa-icon>Go back
+    </button>
+    <button type="button" (click)="save()" class="button-base rounded py-2 px-3">
+      Save
+    </button>
   </div>
 </div>
