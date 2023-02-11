@@ -1,14 +1,14 @@
 <div *ngIf="messageService.messages.length" class="flex justify-center">
   <div>
     <div class="flex flex-row w-fit mx-auto">
-      <h2 class="text-red-700 mr-2">
+      <h3 class="text-red-700 mr-2">
         Messages
-      </h2>
+      </h3>
       <button type="button" (click)="messageService.clear()" class="mt-8 rounded-full h-7 w-7 border-gray-700 border-2 my-auto text-gray-700 font-bold hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white focus:outline-none">
         <fa-icon [icon]="faXmark"></fa-icon>
       </button>
     </div>
-    <div *ngFor="let message of messageService.messages">
+    <div *ngFor="let message of messageService.messages" class="rounded-lg bg-gray-100 text-gray-500 py-2 px-4 my-2">
       {{message}}
     </div>
   </div>

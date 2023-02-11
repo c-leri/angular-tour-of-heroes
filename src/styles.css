@@ -17,9 +17,7 @@
   .input-bar {
     @apply bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5;
   }
-}
 
-@layer utilities {
   .button-base {
     @apply bg-blue-500 hover:bg-blue-700 text-white font-bold focus:outline-none focus:bg-blue-700;
   }
@@ -33,4 +31,8 @@
   .navlink {
     @apply navlink-base text-gray-300 hover:bg-gray-700 hover:text-white;
   }
+}
+
+@layer utilities {
+
 }
