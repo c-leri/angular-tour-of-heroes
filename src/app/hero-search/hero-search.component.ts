@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
@@ -11,6 +13,9 @@ import { HeroService } from '../hero.service';
   templateUrl: './hero-search.component.html',
 })
 export class HeroSearchComponent implements OnInit {
+  // fontawesome icons
+  faSearch = faSearch;
+
   heroes$!: Observable<Hero[]>;
   private searchTerms = new Subject<string>();
 
@@ -30,7 +35,7 @@ export class HeroSearchComponent implements OnInit {
       distinctUntilChanged(),
 
       // switch to new search observable each time the term changes
-      switchMap((term: string) => this.heroService.searchHeroes(term)),
+      switchMap((term: string) => this.heroService.searchHeroes(term))
     );
   }
 }

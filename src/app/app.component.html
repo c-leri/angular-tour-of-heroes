@@ -4,12 +4,16 @@
     <div class="relative flex h-16 items-center justify-between">
       <!-- Mobile navigation menu toggle -->
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-        <button type="button" (click)='toggleNav()' class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+        <button (click)="toggleNav()" aria-controls="mobile-menu" aria-expanded="false"
+          class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+          type="button">
           <span class="sr-only">Open main menu</span>
           <!-- "Open menu" symbol -->
-          <fa-icon [icon]="faBars" [ngClass]="(navOpen) ? 'hidden' : 'block'" class="h-6 w-6 text-lg" aria-hidden="true"></fa-icon>
+          <fa-icon [icon]="faBars" [ngClass]="(navOpen) ? 'hidden' : 'block'" aria-hidden="true"
+            class="h-6 w-6 text-lg"></fa-icon>
           <!-- "Close menu" symbol -->
-          <fa-icon [icon]="faXmark" [ngClass]="(navOpen) ? 'block' : 'hidden'" class="h-6 w-6 text-xl" aria-hidden="true"></fa-icon>
+          <fa-icon [icon]="faXmark" [ngClass]="(navOpen) ? 'block' : 'hidden'" aria-hidden="true"
+            class="h-6 w-6 text-xl"></fa-icon>
         </button>
       </div>
       <!-- Navbar content -->
@@ -22,8 +26,11 @@
         <!-- Navbar links -->
         <div class="hidden sm:ml-10 sm:block">
           <div class="flex space-x-4">
-            <a routerLink="/dashboard" [ngClass]="(route === '/dashboard') ? 'navlink-current' : 'navlink'" [attr.aria-current]="(route === '/dashboard') ? 'page' : ''">Dashboard</a>
-            <a routerLink="/heroes" [ngClass]="(route === '/heroes') ? 'navlink-current' : 'navlink'" [attr.aria-current]="(route === '/heroes') ? 'page' : ''">Heroes</a>
+            <a [attr.aria-current]="(route === '/dashboard') ? 'page' : ''"
+              [ngClass]="{'navlink-current': route === '/dashboard'}" class="navlink"
+              routerLink="/dashboard">Dashboard</a>
+            <a [attr.aria-current]="(route === '/heroes') ? 'page' : ''"
+              [ngClass]="{'navlink-current': route === '/heroes'}" class="navlink" routerLink="/heroes">Heroes</a>
           </div>
         </div>
       </div>
@@ -33,8 +40,11 @@
   <!-- Mobile navigation menu links -->
   <div [ngClass]="(navOpen) ? 'block' : 'hidden'" class="sm:hidden" id="mobile-menu">
     <div class="space-y-1 px-2 pt-2 pb-3">
-      <a routerLink="/dashboard" [ngClass]="(route=='/dashboard') ? 'navlink-current' : 'navlink'" class="block text-base" [attr.aria-current]="(route === '/dashboard') ? 'page' : ''">Dashboard</a>
-      <a routerLink="/heroes" [ngClass]="(route=='/heroes') ? 'navlink-current' : 'navlink'" class="block text-base" [attr.aria-current]="(route === '/heroes') ? 'page' : ''">Heroes</a>
+      <a [attr.aria-current]="(route === '/dashboard ') ? 'page' : ''"
+        [ngClass]="{'navlink-current': route === '/dashboard'}" class="navlink block text-base"
+        routerLink="/dashboard">Dashboard</a>
+      <a [attr.aria-current]="(route === '/heroes') ? 'page' : ''" [ngClass]="{'navlink-current': route === '/heroes'}"
+        class="navlink block text-base" routerLink="/heroes">Heroes</a>
     </div>
   </div>
 </nav>
