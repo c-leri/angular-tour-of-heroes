@@ -5,48 +5,44 @@
 
 @layer base {
   h2 {
-    @apply text-center my-6 text-4xl text-blue-600 font-bold;
+    @apply text-center my-6 text-4xl text-primary font-bold;
   }
 
   h3 {
-    @apply text-center mt-6 mb-3 text-3xl text-blue-600 font-bold;
+    @apply text-center mt-6 mb-3 text-3xl text-primary font-bold;
   }
 }
 
 @layer components {
   .input-bar {
-    @apply bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5;
+    @apply bg-base-100 border border-base-content text-base-content rounded-lg block w-full p-2.5;
 
     &:focus {
-      @apply ring-blue-500 border-blue-500;
+      @apply outline-none ring ring-primary border-primary;
     }
   }
 
   .button-base {
-    @apply bg-blue-500 text-white font-bold;
+    @apply bg-primary text-primary-content font-bold;
 
     &:hover, &:focus {
-      @apply bg-blue-700 outline-none;
+      @apply bg-primary-focus outline-none;
     }
   }
 
   .navlink {
-    @apply px-3 py-2 rounded-md font-medium;
+    @apply px-3 py-2 rounded-md text-lg;
 
-    &:focus {
-      @apply outline-none ring ring-white;
+    &:focus, &:hover {
+      @apply outline-none ring ring-primary-content;
     }
 
     &.navlink-current {
-      @apply bg-gray-900 text-white;
+      @apply bg-primary-focus text-primary-content;
     }
 
     &:not(.navlink-current) {
-      @apply text-gray-300;
-
-      &:hover {
-        @apply bg-gray-700 text-white;
-      }
+      @apply text-primary-content;
     }
   }
 }

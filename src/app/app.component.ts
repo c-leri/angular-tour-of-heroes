@@ -3,6 +3,7 @@ import { Location } from "@angular/common";
 import { Router } from "@angular/router";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faAngular } from "@fortawesome/free-brands-svg-icons";
+import { themeChange } from "theme-change";
 
 @Component({
   selector: "app-root",
@@ -21,6 +22,9 @@ export class AppComponent {
   navOpen = false;
 
   constructor(location: Location, router: Router) {
+    // initialize the theme changer
+    themeChange();
+
     router.events.subscribe(() => {
       this.route = location.path();
     });
