@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { Location } from "@angular/common";
 import { Router } from "@angular/router";
-import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faXmark, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { faAngular } from "@fortawesome/free-brands-svg-icons";
 import { themeChange } from "theme-change";
 
@@ -14,6 +14,8 @@ export class AppComponent {
   faBars = faBars;
   faXmark = faXmark;
   faAngular = faAngular;
+  faSun = faSun;
+  faMoon = faMoon;
 
   title = "Tour of Heroes";
   // current route, to know which button to set as "current" in the navbar
@@ -32,5 +34,9 @@ export class AppComponent {
 
   toggleNav() {
     this.navOpen = !this.navOpen;
+  }
+
+  getTheme() {
+    return (localStorage.getItem('theme') !== null) ? localStorage.getItem('theme') : 'dark';
   }
 }

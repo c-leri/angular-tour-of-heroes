@@ -5,7 +5,7 @@
       <!-- Mobile navigation menu toggle -->
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
         <button (click)="toggleNav()" aria-controls="mobile-menu" aria-expanded="false"
-          class="inline-flex items-center justify-center rounded-md p-2 text-primary-content hover:ring-2 hover:ring-inset hover:ring-primary-content focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-content"
+          class="inline-flex items-center justify-center rounded-md p-2 text-primary-content hover:ring hover:ring-primary-content focus:outline-none focus:ring focus:ring-primary-content"
           type="button">
           <span class="sr-only">Open main menu</span>
           <!-- "Open menu" symbol -->
@@ -36,8 +36,12 @@
       </div>
       <!-- Theme changer -->
       <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-        <button type="button" class="py-2 px-3 button-base border border-primary-content rounded text-lg"
-          data-toggle-theme="dark,light">Theme</button>
+        <button type="button"
+          class="py-2 px-3 text-primary-content text-xl rounded hover:ring hover:ring-primary-content focus:ring focus:ring-primary-content focus:outline-none swap"
+          data-toggle-theme="light,dark" [ngClass]="{'swap-active': getTheme() === 'dark'}">
+          <fa-icon [icon]="faSun" class="swap-on"></fa-icon>
+          <fa-icon [icon]="faMoon" class="swap-off"></fa-icon>
+        </button>
       </div>
     </div>
   </div>
